@@ -1,10 +1,11 @@
 const express = require('express');
+
 const router = express.Router();
 
-module.exports = function(app) {
+module.exports = (app) => {
   app.use('/', router);
-}
+};
 
-router.get('/', function(req, res, next) {
+router.get('/', (req, res) => {
   res.send('hello world');
 });
