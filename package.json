@@ -5,7 +5,8 @@
   "main": "",
   "scripts": {
       "install": "cd server && yarn install & cd client && yarn install",
-      "start": "cd server && npm start & cd client && yarn start"
+      "start": "cd server && npm start & cd client && yarn start",
+      "test": "no tests for now"
   },
   "author": "Rhuan Santos",
   "license": "ISC"
