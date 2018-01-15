@@ -7,9 +7,5 @@ module.exports = (sequelize, DataTypes) => {
     uuid: DataTypes.STRING,
     phone: DataTypes.STRING,
   });
-
-  Users.associate = function (models) {
-    Users.belongsTo(models.roles);
-  };
   return Users;
 };
