@@ -6,12 +6,6 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     uuid: DataTypes.STRING,
     phone: DataTypes.STRING,
-  }, {
-    classMethods: {
-      associate: (models) => {
-        // console.log(models);
-      },
-    },
   });
   return Users;
 };

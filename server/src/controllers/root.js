@@ -12,9 +12,8 @@ router.get('/test', (req, res) => {
     where: {
       email: 'rhuansantosdev@gmail.com',
     },
+  }).then((_data) => {
+    // _data.map(_data => _data.id);
+    res.json(_data);
   });
-  // .then((_data) => {
-  //   _data.map(_data => _data.id);
-  // });
-  res.send('hello world');
 });
