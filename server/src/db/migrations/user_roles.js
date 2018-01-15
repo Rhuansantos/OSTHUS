@@ -5,13 +5,15 @@ module.exports = {
       id: {
         allowNull: false,
         autoIncrement: true,
-        primaryKey: true,
         type: Sequelize.INTEGER
       },
-      role_id: {
+      uuid: {
+        type: Sequelize.STRING
+      },
+      roleId: {
         type: Sequelize.INTEGER
       },
-      user_id: {
+      userId: {
         type: Sequelize.INTEGER
       },
       createdAt: {

@@ -1,9 +1,11 @@
+'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   const Users = sequelize.define('users', {
-    discorduser: DataTypes.STRING,
+    name: DataTypes.STRING,
     email: DataTypes.STRING,
     uuid: DataTypes.STRING,
-    verified: DataTypes.BOOLEAN,
+    phone: DataTypes.STRING,
   }, {
     classMethods: {
       associate: (models) => {
