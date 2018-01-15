@@ -8,7 +8,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       uuid: {
-        type: Sequelize.STRING
+        type: Sequelize.UUID
       },
       roleId: {
         type: Sequelize.INTEGER

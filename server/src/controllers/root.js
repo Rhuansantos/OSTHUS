@@ -8,12 +8,13 @@ module.exports = (app) => {
 };
 
 router.get('/test', (req, res) => {
-
   models.users.findAll({
     where: {
       email: 'rhuansantosdev@gmail.com',
     },
-  }).then(x => console.log(x));
-
+  });
+  // .then((_data) => {
+  //   _data.map(_data => _data.id);
+  // });
   res.send('hello world');
 });
