@@ -75,7 +75,11 @@ router.get('/getAll', (req, res) => {
   models.users.findAll({
     include: [{ model: models.histories }],
   }).then((_data) => {
-    res.json(_data);
+    if (_data.length < 0 || _data.length === null) {
+      res.json({ error: 'something went wrong' });
+    } else {
+      res.json(_data);
+    }
   });
 });
 
