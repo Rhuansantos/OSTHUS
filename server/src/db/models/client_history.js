@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   ClientHistories.associate = function (models) {
-    ClientHistories.belongsTo(models.clients, { foreignKey: 'userId', as: 'clients'});
+    ClientHistories.belongsToMany(models.clients, { through: 'testbla', foreignKey: 'userId'});
   };
 
   return ClientHistories;
