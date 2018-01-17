@@ -2,13 +2,13 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('clientHistories', [{
-      action: 'login',
+    return queryInterface.bulkInsert('histories', [{
       userId: 1,
+      action: 'login',
     }], {});
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('clientHistories', null, {});
+    return queryInterface.bulkDelete('histories', null, {});
   }
 };

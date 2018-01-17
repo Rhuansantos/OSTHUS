@@ -4,7 +4,9 @@
     "password": null,
     "database": "OSTHUS",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "freezeTableName": true,
+    "underscored": true
   },
   "test": {
     "username": "postgres",
