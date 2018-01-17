@@ -7,8 +7,8 @@ module.exports = (sequelize, DataTypes) => {
     phone: DataTypes.STRING,
   });
 
-  Users.associate = function (models) {
-    Users.hasMany(models.histories, { foreignKey: 'userId'});
+  Users.associate = (models) => {
+    Users.hasMany(models.histories, { foreignKey: 'userId' });
   };
 
   return Users;
