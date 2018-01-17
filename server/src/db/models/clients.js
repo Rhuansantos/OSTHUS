@@ -8,9 +8,9 @@ module.exports = (sequelize, DataTypes) => {
     role: DataTypes.STRING,
   });
 
-  // Clients.associate = function (models) {
-  //   Clients.belongsTo(models.roles, { through: 'history', as: 'users' });
-  // };
+  Clients.associate = function (models) {
+    Clients.hasMany(models.clientHistories, { foreignKey: 'userId', as: 'users' });
+  };
 
   return Clients;
 };

@@ -1,14 +1,14 @@
 'use strict';
 
 module.exports = (sequelize, DataTypes) => {
-  const Client_history = sequelize.define('client_history', {
+  const ClientHistories = sequelize.define('clientHistories', {
     action: DataTypes.STRING,
     userId: DataTypes.INTEGER,
   });
 
-  // Client_history.associate = function (models) {
-  //   Client_history.belongsTo(models.clients, { through: 'clients', as: 'clients'});
-  // };
+  ClientHistories.associate = function (models) {
+    ClientHistories.belongsTo(models.clients, { foreignKey: 'userId', as: 'clients'});
+  };
 
-  return Client_history;
+  return ClientHistories;
 };

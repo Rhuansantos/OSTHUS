@@ -8,16 +8,7 @@ module.exports = (app) => {
 };
 
 router.get('/test', (req, res) => {
-  // models.clients.findAll({
-  //   where: {
-  //     email: 'rhuansantosdev@gmail.com',
-  //   },
-  // }).then((_data) => {
-  //   // _data.map(_data => _data.id);
-  //   res.json(_data);
-  // });
-
-    models.client_history.findAll({
+  models.clients.findAll({
     where: {
       email: 'rhuansantosdev@gmail.com',
     },
