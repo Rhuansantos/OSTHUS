@@ -1,0 +1,1 @@
+define({ "api": [  {    "type": "get",    "url": "/user/:id",    "title": "",    "version": "0.0.0",    "filename": "src/controllers/users.js",    "group": "_Applications_MAMP_htdocs_OSTHUS_server_src_controllers_users_js",    "groupTitle": "_Applications_MAMP_htdocs_OSTHUS_server_src_controllers_users_js",    "name": "GetUserId"  }] });

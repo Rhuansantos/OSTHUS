@@ -7,7 +7,8 @@ module.exports = (app) => {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
 
-  app.use(express.static('public'));
+  app.use(express.static(__dirname + '/public'));
+
 
   // include all the controllers
   const controllers = glob.sync(__dirname + '/controllers/*.js');

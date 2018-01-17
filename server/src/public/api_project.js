@@ -1,0 +1,1 @@
+define({  "name": "OSTHUS API",  "version": "1.0.0",  "description": "API testing",  "template": {    "forceLanguage": "en"  },  "sampleUrl": false,  "defaultVersion": "0.0.0",  "apidoc": "0.3.0",  "generator": {    "name": "apidoc",    "time": "2018-01-17T04:47:03.734Z",    "url": "http://apidocjs.com",    "version": "0.17.6"  }});
