@@ -15,6 +15,9 @@ router.get('/getById', (req, res) => {
   });
 });
 
+/**
+ * @api {get} /user/:id
+ */
 router.get('/getAll', (req, res) => {
   models.users.findAll({
     include: [{ model: models.histories }],
