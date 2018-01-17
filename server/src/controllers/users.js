@@ -8,7 +8,7 @@ module.exports = (app) => {
 };
 
 /**
- * @api {get} /users/getById/${id}
+ * @api {get} /user/getById/${id}
  * @apiParam {Number} id Users unique ID.
  * @apiVersion 0.1.0
  * @apiName GetUser by id
@@ -50,7 +50,7 @@ router.get('/getById/:uname', (req, res) => {
 });
 
 /**
- * @api {get} /users/all
+ * @api {get} /user/all
  * @apiVersion 0.1.0
  * @apiGroup User
  *  * @apiSuccessExample Success-Response:
@@ -76,5 +76,29 @@ router.get('/getAll', (req, res) => {
     include: [{ model: models.histories }],
   }).then((_data) => {
     res.json(_data);
+  });
+});
+
+/**
+ * @api {post} /user/new
+ * @apiVersion 0.1.0
+ * @apiGroup User
+ * @apiParamExample {json} Request-Example:
+ *     {
+ *       "name": "Rhuan",
+ *       "email": "Santos",
+ *       "Phone": "407-683-6105",
+ *       "role": "admin"
+ *     }
+*/
+router.post('/new', (req, res) => {
+  const data = req.body;
+  models.users.create({
+    name: data.name,
+    email: data.email,
+    phone: data.phone,
+    role: data.role,
+  }).then(() => {
+    res.json({ sucess: 'content insert' });
   });
 });
