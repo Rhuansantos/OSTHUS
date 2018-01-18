@@ -145,3 +145,12 @@ router.post('/edit', (req, res) => {
     }
   });
 });
+
+// router.post('/delete', (req, res) => {
+//   const data = req.body;
+//   models.users.destroy({
+//     where: { id: data.id },
+//   }).then((_data) => {
+//     console.log(_data);
+//   });
+// });

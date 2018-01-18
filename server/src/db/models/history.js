@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     action: DataTypes.STRING,
   });
   Histories.associate = (models) => {
-    Histories.belongsTo(models.users, { foreignKey: 'userId' });
+    Histories.belongsTo(models.users, { onDelete: 'CASCADE', foreignKey: 'userId' });
   };
   return Histories;
 };
