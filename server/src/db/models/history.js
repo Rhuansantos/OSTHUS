@@ -2,13 +2,11 @@
 
 module.exports = (sequelize, DataTypes) => {
   const Histories = sequelize.define('histories', {
-    userId: 1,
+    userId: DataTypes.INTEGER,
     action: DataTypes.STRING,
   });
-
-  Histories.associate = function (models) {
-    Histories.belongsTo(models.users, { foreignKey: 'userId' });
+  Histories.associate = (models) => {
+    Histories.belongsTo(models.users, { onDelete: 'CASCADE', foreignKey: 'userId' });
   };
-  
   return Histories;
 };

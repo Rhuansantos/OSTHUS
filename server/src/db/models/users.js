@@ -5,10 +5,11 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     email: DataTypes.STRING,
     phone: DataTypes.STRING,
+    role: DataTypes.STRING,
   });
 
-  Users.associate = function (models) {
-    Users.hasMany(models.histories, { foreignKey: 'userId'});
+  Users.associate = (models) => {
+    Users.hasMany(models.histories, { onDelete: 'CASCADE', foreignKey: 'userId' });
   };
 
   return Users;
