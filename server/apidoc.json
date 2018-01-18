@@ -1,0 +1,8 @@
+{
+    "name": "OSTHUS API",
+    "version": "1.0.0",
+    "description": "OSTHUS API",
+    "template": {
+        "forceLanguage": "en"
+    }
+}
