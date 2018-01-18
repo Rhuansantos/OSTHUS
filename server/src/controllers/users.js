@@ -87,6 +87,10 @@ router.get('/getAll', (req, res) => {
  * @api {post} /user/new
  * @apiVersion 0.1.0
  * @apiGroup User
+ * @apiParam {String} name user name
+ * @apiParam {String} email user email
+ * @apiParam {String} phone user phone
+ * @apiParam {String} user user role
  * @apiParamExample {json} Request-Example:
  *     {
  *       "name": "Rhuan",
@@ -104,5 +108,40 @@ router.post('/new', (req, res) => {
     role: data.role,
   }).then(() => {
     res.json({ sucess: 'content insert' });
+  });
+});
+
+/**
+ * @api {post} /user/edit
+ * @apiVersion 0.1.0
+ * @apiGroup User
+ * @apiParam {Number} Id id Users unique ID.
+ * @apiParam {String} name user name
+ * @apiParam {String} email user email
+ * @apiParam {String} phone user phone
+ * @apiParam {String} user user role
+ * @apiParamExample {json} Request-Example:
+ *     {
+ *        "id": 1,
+ *       "name": "Rhuan",
+ *       "email": "rhuansantosdev@gmail.com",
+ *       "Phone": "407-683-6105",
+ *       "role": "admin"
+ *     }
+*/
+
+router.post('/edit', (req, res) => {
+  const data = req.body;
+  models.users.update({
+    name: data.name,
+    email: data.email,
+    phone: data.phone,
+    role: data.role,
+  }, { where: { id: data.id } }).then((_data) => {
+    if (_data >= 1) {
+      res.json({ sucess: 'user updated' });
+    } else {
+      res.json({ error: 'something went wrong' });
+    }
   });
 });
