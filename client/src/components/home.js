@@ -3,26 +3,42 @@ import { Nav } from './common/';
 import axios from 'axios';
 
 class Home extends Component {
-  constructor() {
-    super();
-    this.loadingUsers();
-    this.temp = [];
-  }
-  loadingUsers(){
+  state = {
+    data: [],
+  }  
+  componentWillMount() {
     axios.get('http://localhost:4000/user/getAll')
-    .then(function (response) {
-      console.log(response);
-      this.temp.push(response);
+    .then((response) => {
+      this.setState({
+        data: response.data
+      });
     })
-    .catch(function (error) {
+    .catch((error) => {
       console.log(error);
     });
   }
-  render() {
-    console.log(this.temp);
+
+  editUser(){
+    console.log('editing');
+  }
+  renderUser() {
     return (
-      <Nav/>
+      this.state.data.map((user,index) => {
+        return(
+        <li key={index}>{user.id}, {user.name}, {user.email}
+        <button onClick={() => console.log(index)}>Edit</button>
+        <button>Delete</button>
+        </li>
+        )
+      })
     );
+  }
+  render() {
+    return (
+      <ul>
+        {this.renderUser()}
+      </ul>
+    )
   }
 }
 
