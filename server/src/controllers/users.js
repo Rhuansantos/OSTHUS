@@ -4,7 +4,10 @@ const models = require('../db/models');
 const router = express.Router();
 
 module.exports = (app) => {
-  app.use('/user', router);
+  app.use('/user', router, (req, res, next) => {
+
+    next();
+  });
 };
 
 /**
@@ -36,7 +39,7 @@ module.exports = (app) => {
  *       "error": "UserNotFound"
  *     }
  */
-router.get('/getById/:uname', (req, res) => {
+router.get('/getById/:uname', (req, res, next) => {
   models.users.findAll({
     where: { id: req.params.uname },
     include: [{ model: models.histories, attributes: ['action', 'createdAt'] }],
