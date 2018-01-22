@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 const Nav = () => {
   return (
-    <h1>Hi</h1>
+    <Link to='/test'>Test</Link>
   );
 }
 
