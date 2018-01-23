@@ -30,25 +30,42 @@ class Home extends Component {
     return (
       this.state.data.map((user,index) => {
         return(
-        <li key={index}>{user.id}, {user.name}, {user.email}
-        <button onClick={() => this.setState({ redirect: true, userId: user.id })}>Edit</button>
-        <button>Delete</button>
-        </li>
+          <tr key={user.id}>
+            <th scope="row">{user.id}</th>
+            <td>{user.name}</td>
+            <td>{user.email}</td>
+            <td>{user.phone}</td>
+            <td>{user.role}</td>
+            <td><button class="btn btn-success" onClick={() => this.setState({ redirect: true, userId: user.id })}>Edit</button></td>
+            <td><button class="btn btn-danger">Delete</button></td>
+          </tr>
         )
       })
     );
   }
   render() {
     const { redirect } = this.state;
-    console.log();
-
+    
     if (redirect) {
       return <Redirect to={'/user/' + this.state.userId}/ >;
     }
     return (
-      <ul>
+      <table class="table table-inverse">
+        <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Role</th>
+          <th>edit</th>
+          <th>delete</th>
+        </tr>
+        </thead>
+        <tbody>
         {this.renderUser()}
-      </ul>
+        </tbody>
+      </table>
     )
   }
 }

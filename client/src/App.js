@@ -8,7 +8,6 @@ const App = () => ({
   render() {
     return (
       <main>
-        <Nav />
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/user/:id' render={(props) => <EditUser {...props} />} />

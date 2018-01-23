@@ -29,9 +29,17 @@ class EditUser extends Component {
     return (
       this.state.data.map((user,index) => {
         return(
-        <li key={index}>{user.id}, {user.name}, {user.email}
-            <button>Save</button>
-        </li>
+        <form key={index}>
+          <label>Username</label>
+          <input type="text" defaultValue={user.name} />
+          <label>Email</label>
+          <input type="text" defaultValue={user.email} />
+          <label>Phone</label>
+          <input type="text" defaultValue={user.phone} />
+          <label>User role</label>
+          <input type="text" defaultValue={user.role} />
+          <button>Save</button>
+        </form>
         )
       })
     );
