@@ -26,18 +26,22 @@ class Home extends Component {
     let link = '/user/' + _userId;
     <Redirect to='/user/3' />
   }
+  deleteUser(_userId) {
+    console.log(_userId);
+    // React.unmountComponentAtNode(document.querySelector('abc'));
+  }
   renderUser() {
     return (
       this.state.data.map((user,index) => {
         return(
-          <tr key={user.id}>
+          <tr className={user.id} key={user.id}>
             <th scope="row">{user.id}</th>
-            <td>{user.name}</td>
+            <td className="abc">{user.name}</td>
             <td>{user.email}</td>
             <td>{user.phone}</td>
             <td>{user.role}</td>
-            <td><button class="btn btn-success" onClick={() => this.setState({ redirect: true, userId: user.id })}>Edit</button></td>
-            <td><button class="btn btn-danger">Delete</button></td>
+            <td><button className="btn btn-success" onClick={() => this.setState({ redirect: true, userId: user.id })}>Edit</button></td>
+            <td><button className="btn btn-danger" onClick={()=> this.deleteUser(user.id)}>Delete</button></td>
           </tr>
         )
       })
@@ -50,7 +54,7 @@ class Home extends Component {
       return <Redirect to={'/user/' + this.state.userId}/ >;
     }
     return (
-      <table class="table table-inverse">
+      <table className="table table-inverse">
         <thead>
         <tr>
           <th>Id</th>

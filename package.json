@@ -4,9 +4,12 @@
   "description": "",
   "main": "",
   "scripts": {
-    "get": "npm install & cd server && npm install & cd client && npm install",
-    "start": "cd server && nodemon server.js start & cd client && npm start",
+    "get": "npm install & cd server && npm install & start & cd server/src/db/ && npm install & cd client && npm install",
+    "start": "cd server && nodemon server.js & cd client && npm start",
     "api-doc": "cd server && apidoc -i src/controllers -o src/public",
+    "data-create": "cd server/src/db && node_modules/.bin/sequelize db:create",
+    "data-migrate": "cd server/src/db && node_modules/.bin/sequelize db:migrate",
+    "data-seed": "cd server/src/db && node_modules/.bin/sequelize db:seed:all",
     "test": "mocha"
   },
   "author": "Rhuan Santos",
