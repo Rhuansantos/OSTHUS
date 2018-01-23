@@ -1,11 +1,8 @@
 {
-  "name": "osthus",
+  "name": "db",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
-  "scripts": {},
-  "author": "",
-  "license": "ISC",
+  "main": "index.js",
   "dependencies": {
     "body-parser": "^1.15.2",
     "cors": "^2.8.4",
@@ -16,5 +13,7 @@
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.31.2",
     "sequelize-cli": "^3.2.0"
-  }
+  },
+  "author": "",
+  "license": "ISC"
 }

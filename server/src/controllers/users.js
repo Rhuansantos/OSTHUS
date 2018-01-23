@@ -50,7 +50,7 @@ router.get('/getById/:uname', (req, res) => {
 });
 
 /**
- * @api {get} /user/all
+ * @api {get} /user/getAll
  * @apiVersion 0.1.0
  * @apiGroup User
  *  * @apiSuccessExample Success-Response:
